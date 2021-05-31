@@ -1,14 +1,4 @@
-bin/
-/build/
-build-ui/
-.settings/
-.gradle/
-.classpath
-.project
-.git/
-.vswp
-_vnote.json
-catalina*
-/logs/
 
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+.git/
+*.vswp
+*vnote.json
