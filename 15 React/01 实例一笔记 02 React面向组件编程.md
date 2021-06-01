@@ -1,4 +1,4 @@
-## React面向组件编程
+# React面向组件编程
 ## 使用React开发者工具调试
 - 翻墙情况下：在Google应用商店直接下载使用
 - 未翻墙的情况下：
@@ -111,12 +111,11 @@ constructor(props) {
         * 一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
 - 更新阶段
     + setState()更新流程
-        * shouleCOmponentUpdate()
+        * shouleComponentUpdate()
         * componentWillUpdate()
         * render()
         * componentDidUpdate()
     + forceUpdate()强制更新
-        * shouldComponentUpdate()
         * componentWillUpdate()
         * render()
         * componentDidUpdate()
@@ -130,18 +129,18 @@ constructor(props) {
     + componentWillUnmount(): ===> 常用
         * 一般在这个钩子中做一些收尾的事，例如：关闭定hi器、取消订阅消息。
 
-## 生命周期（新）
-### 过时的生命周期
+### 生命周期（新）
+#### 过时的生命周期
 由于以下生命周期方法经常被误解和滥用。考虑这三个生命周期在以后版本发布的异步渲染功能中可能潜在的误用问题更大。所以在17版本（包含17版本）后的版本中为这些生命周期添加“UNSAFE_”前缀。（这里的“unsafe”不是指不安全性，而是指使用这些生命周期的代码在React的未来版本中可能出现bug，尤其是启用异步渲染之后。）
 - componentWillMount()
 - componentWillUpdate()
 - componentWillReceiveProps()
 
-### 新增的生命周期
+#### 新增的生命周期
 - getDerivedStateFromProps():在调用render方法之前调用，并且在初始挂载及后续更新时都会被调用。返回一个对象来更新state，如果返回null则不更新任何内容。
-- getSnapshotBeforeUpdate():在最近的一次渲染输出之前调用。它使得组件在发生更改之前从DOM中捕获一些信息。此生命周期的任何返回值将作为参数传递给`componentDidUpdate()`
+- getSnapshotBeforeUpdate():在最近的一次渲染输出之前调用。它使得组件在发生更改之前从DOM中捕获一些信息。此生命周期的任何返回值将作为参数传递给componentDidUpdate()
 
-### 生命周期流程图（新）
+#### 生命周期流程图
 - 挂载时
     + constructor()
     + getDerivedStateFromProps()
